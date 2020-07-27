@@ -11,6 +11,7 @@
 	<title>Dynamic Jet</title>
 </head>
 <body>
+
 <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
     <div class="container">
         <a href="../" class="navbar-brand">Bootswatch</a>
@@ -73,7 +74,7 @@
 
 <div class="container">
     <h1>Dynamic Jet</h1>
-
+    <p> test bla bla  </p>
     <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa, earum enim, eum excepturi facilis itaque iusto nihil, placeat porro provident quos soluta suscipit? Consequuntur doloremque eligendi provident quidem repellendus?</span><span>Ab amet, architecto consequuntur error esse et ex fugit ipsa mollitia, possimus repellendus temporibus ullam voluptatibus. Assumenda laboriosam quo repellendus sint voluptate. Ab adipisci amet deserunt distinctio nihil quae quidem.</span><span>Ad alias animi asperiores autem, dignissimos dolore fuga illum ipsum iure nam pariatur quis suscipit! At culpa debitis dolorum eligendi expedita fuga labore laudantium pariatur rem sequi, sint unde vel!</span>
     </p>
 </div>
