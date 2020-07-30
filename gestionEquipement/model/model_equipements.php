@@ -53,3 +53,25 @@ function count_inservice_equipment()
 
 	return $req_count_inservice;
 }
+
+function show_update_equipment($name_category,$description_category,$power,$price,$id_category)
+{
+	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
+	$update = $cnx->prepare('UPDATE category_equipement SET name_category=:name_category , description_category=:description_category, power=:power,price=:price WHERE id_category = :id_category');
+	$req_update = $update->execute(array(
+		'name_category'=>$_POST['name_category'],
+		'description_category'=>$_POST['description_category'],
+		'power'=>$_POST['power'],
+		'price'=>$_POST['price'],
+		'id_category'=>$_GET['id_category']));
+	return $update;
+}
+
+function show_delete_equipment()
+{
+	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
+	$req_delete = $cnx->prepare(' DELETE FROM category_equipement  WHERE id_category = ?');
+	$req_delete->execute(array($_GET['id_category']));
+
+	return $req_delete;
+}

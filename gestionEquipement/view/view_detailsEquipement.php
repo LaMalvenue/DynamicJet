@@ -1,54 +1,64 @@
 <?php $titre = "Details de l'équipement"; ?>
 <?php $css = "style_equipment.css"; ?>
+
 <?php ob_start(); ?>
 
+<?php $equipment = $req_details_equipment->fetch(); ?>
+<?php $count_total = $req_count_total->fetch(); ?>
+<?php $count_available = $req_count_available->fetch(); ?>
+<?php $count_outoforder = $req_count_outoforder->fetch(); ?>
+<?php $count_inservice = $req_count_inservice->fetch(); ?>
+
     <div class="container container-equipment">
+        <div class="container-equipment-description">
+            <div class="row">
+                <div class="col-md-6">
 
-		<?php while ($equipment = $req_details_equipment->fetch()) { ?>
-
-			<?php $count_total = $req_count_total->fetch(); ?>
-			<?php $count_available = $req_count_available->fetch(); ?>
-			<?php $count_outoforder = $req_count_outoforder->fetch(); ?>
-			<?php $count_inservice = $req_count_inservice->fetch(); ?>
-
-            <div class="container-equipment-description">
-                <div class="row">
-                    <div class="col-md-6">
-
-                        <h1><?= $equipment['name_category'] ?></h1>
-                        <h4><?= $equipment['description_category'] ?></h4>
-                        <p class="lead">Puissance de <?= $equipment['power'] ?>km/h 💦 Prix HT à partir
-                            de <?= $equipment['price'] ?>€/h</p>
-
-
-                        <table class="table ">
-                            <thead>
-                            <tr>
-                                <th>Quantité totale</th>
-                                <th>Quantité disponible</th>
-                                <th>Quantité en service</th>
-                                <th>Quantité hors service</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><?= $count_total['count_items']; ?></td>
-                                <td><?= $count_available['count_items']; ?></td>
-                                <td><?= $count_outoforder['count_items']; ?></td>
-                                <td><?= $count_inservice['count_items']; ?></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div id="details">
+                        <h1 id="nameEquipment"><?= $equipment['name_category'] ?></h1>
+                        <h4 id="descriptionEquipment"><?= $equipment['description_category'] ?></h4>
+                        <p class="lead">Vitesse de <span id="powerEquipment"><?= $equipment['power'] ?></span> km/h 💦 </p>
+                        <p class="lead">Prix HT à partir de <span id="priceEquipment"><?= $equipment['price'] ?></span>€/h</p>
                     </div>
-                    <div class="col-md-6">
-                        <img class="img-fluid img-thumbnail rounded" src="public/images/<?= $equipment['image'] ?>"
-                             alt="Jet ski">
-                    </div>
+
+                    <table class="table ">
+                        <thead>
+                        <tr>
+                            <th>Quantité disponible</th>
+                            <th>Quantité en service</th>
+                            <th>Quantité hors service</th>
+                            <th>Quantité totale</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><?= $count_available['count_items']; ?></td>
+                            <td><?= $count_outoforder['count_items']; ?></td>
+                            <td><?= $count_inservice['count_items']; ?></td>
+                            <td><?= $count_total['count_items']; ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6 container-img">
+                    <img class="img-fluid img-thumbnail rounded" src="public/images/<?= $equipment['image'] ?>"
+                         alt="Jet ski">
                 </div>
             </div>
-		<?php } ?>
-
+            <div class="row delete">
+                <a href="">
+                    <button type="button" class="btn btn-primary" name="update" id="update">Modifier</button>
+                </a>
+                <a href="">
+                    <button type="button" class="btn btn-danger " name="delete">Supprimer</button>
+                </a>
+            </div>
+        </div>
     </div>
+
+    <script src="public/js/app.js">
+
+    </script>
 
 <?php $contenu = ob_get_clean(); ?>
 

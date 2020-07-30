@@ -16,3 +16,14 @@ function details_equipment(){
 
     include(dirname(__DIR__).DIRECTORY_SEPARATOR."view".DIRECTORY_SEPARATOR."view_detailsEquipement.php");
 }
+
+function update_equipment($name_category,$description_category,$power,$price,$id_category){
+	$req_update = show_update_equipment($name_category,$description_category,$power,$price,$id_category);
+
+	details_equipment();
+}
+function delete_equipment($id_category){
+	$req_delete = show_delete_equipment($id_category);
+
+	equipment();
+}
