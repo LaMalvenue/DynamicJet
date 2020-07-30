@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="shortcut icon" href="../public/images/favicon.png" type="image/png"/>
+    <link rel="shortcut icon" type="image/png" href="public/images/favicon.png"/>
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.css" media="screen">
