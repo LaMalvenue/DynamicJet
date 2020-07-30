@@ -1,21 +1,18 @@
 <?php $titre = "Liste des équipements";
-$background = "https://www.villa-lv.com/wp-content/uploads/2017/11/tumblr-beach-waves-backgrounds-7096-7377-hd-wallpapers.jpg";
 ob_start(); ?>
 
-
-    <div class="container list-equipment">
-        <ul>
+    <div class="container container-buttons">
+        <div class="row list-buttons">
 			<?php while ($result_show_equipment = $req_show_equipments->fetch()) { ?>
-                <li>
-                    <a class='listeEquipement'
-                       href='routeur.php?action=gestionEquipement&id_category="<?= $result_show_equipment['id_category'] ?>"'>
+                <div class="col-md-5">
+                    <a href='index.php?action=gestionEquipement&id_category=<?= $result_show_equipment['id_category'] ?>'>
                         <button class="button-equipment">
 							<?= $result_show_equipment['name_category'] ?>
                         </button>
                     </a>
-                </li>
+                </div>
 			<?php } ?>
-        </ul>
+        </div>
     </div>
 
 

@@ -8,7 +8,7 @@ if(isset($_GET['action'])){
 
     if($_GET['action']==='gestionEquipement'){
     	if (isset($_GET['id_category'])) {
-    		if ($_GET['id_category']>=1 && $_GET['id_category']<=5) {
+    		if ($_GET['id_category']>=1 && $_GET['id_category']<=6) {
 			    details_equipment();
 		    } else {
     			echo "Cette catégorie n'existe pas !";

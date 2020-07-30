@@ -3,30 +3,19 @@
 
 <?php ob_start(); ?>
 
-    <style type="text/css">
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-    </style>
-
-    <div class="container container-menu">
-        <div class="row">
+    <div class="container container-buttons">
+        <div class="row list-buttons">
             <div class="col-md-6">
-                <a href="../DynamicJet/routeur.php?action=gestionReservation"><button class="menu">Reservation</button></a>
+                <a href="../DynamicJet/index.php?action=gestionReservation"><button class="menu">Reservation</button></a>
             </div>
             <div class="col-md-6">
-                <a href="../DynamicJet/routeur.php?action=gestionClient"><button class="menu">Gestion Clients</button></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="../DynamicJet/routeur.php?action=gestionEquipement"><button class="menu">Equipements</button></a>
+                <a href="../DynamicJet/index.php?action=gestionClient"><button class="menu">Gestion Clients</button></a>
             </div>
             <div class="col-md-6">
-                <a href="../DynamicJet/routeur.php?action=gestionEffectif"><button class="menu">Effectifs</button></a>
+                <a href="../DynamicJet/index.php?action=gestionEquipement"><button class="menu">Equipements</button></a>
+            </div>
+            <div class="col-md-6">
+                <a href="../DynamicJet/index.php?action=gestionEffectif"><button class="menu">Effectifs</button></a>
             </div>
         </div>
     </div>
