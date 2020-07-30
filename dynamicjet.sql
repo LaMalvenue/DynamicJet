@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  mer. 29 juil. 2020 à 23:13
+-- Généré le :  jeu. 30 juil. 2020 à 19:02
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -37,16 +37,19 @@ CREATE TABLE IF NOT EXISTS `category_equipement` (
   `price` float NOT NULL,
   `image` varchar(1500) NOT NULL,
   PRIMARY KEY (`id_category`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `category_equipement`
 --
 
 INSERT INTO `category_equipement` (`id_category`, `name_category`, `description_category`, `power`, `price`, `image`) VALUES
-(1, 'Jet ski', 'Jet ski de racaille', 40, 35, 'https://checkyeti.imgix.net/images/optimized/jetski-offer-pages---general-hero-.jpg'),
-(2, 'Wakeboard', 'Truc de normie', 20, 15, ''),
-(3, 'Ski nautique', 'La justice a deux vitesses, la Lamborhini en a 6', 25, 70, '');
+(1, 'Jet ski', 'Jet ski de racaille', 40, 35, 'jetski.jpg'),
+(2, 'Wakeboard', 'Truc de normie', 20, 15, 'wakeboard.jpg'),
+(3, 'Ski nautique', 'La justice a deux vitesses, la Lamborhini en a 6', 25, 70, 'skinautique.jpg'),
+(4, 'Bouée', 'Une bouée lol', 5, 10, 'bouee.jpg'),
+(5, 'Bateau', 'Un grooooos bateau', 150, 300, 'bateau.jpeg'),
+(6, 'Planche à voile', 'Une super planche à voile', 30, 50, 'planche.jpeg');
 
 -- --------------------------------------------------------
 
@@ -99,16 +102,22 @@ DROP TABLE IF EXISTS `equipement`;
 CREATE TABLE IF NOT EXISTS `equipement` (
   `id_equipement` int(11) NOT NULL AUTO_INCREMENT,
   `id_category` int(2) NOT NULL,
-  `state` enum('en_service','indisponible','hors_service','') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id_status` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_equipement`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `equipement`
 --
 
-INSERT INTO `equipement` (`id_equipement`, `id_category`, `state`) VALUES
-(1, 1, 'en_service');
+INSERT INTO `equipement` (`id_equipement`, `id_category`, `id_status`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 1),
+(5, 5, 1),
+(6, 1, 3),
+(7, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -148,6 +157,28 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   KEY `fk_reservation_vers_idEmploye` (`idMoniteur_reservation`),
   KEY `fk_reservation_vers_idEquipement` (`IdEquipement_reservation`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `status_equipement`
+--
+
+DROP TABLE IF EXISTS `status_equipement`;
+CREATE TABLE IF NOT EXISTS `status_equipement` (
+  `id_status` int(1) NOT NULL AUTO_INCREMENT,
+  `name_status` varchar(15) NOT NULL,
+  PRIMARY KEY (`id_status`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `status_equipement`
+--
+
+INSERT INTO `status_equipement` (`id_status`, `name_status`) VALUES
+(1, 'Disponible'),
+(2, 'Hors service'),
+(3, 'En service');
 
 --
 -- Contraintes pour les tables déchargées
