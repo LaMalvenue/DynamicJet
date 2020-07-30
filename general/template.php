@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.css" media="screen">
     <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
-    <link rel="stylesheet" type="text/css" href="../DynamicJet2/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../DynamicJet/public/css/style.css">
     <title><?php echo $titre ?></title>
 
 </head>

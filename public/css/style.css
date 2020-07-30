@@ -1,43 +1,43 @@
-*,::before,::after{
-    margin: 0px;
-    padding: 0px;
+*, ::before, ::after {
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
 
-.containerblock{
-background-color: black;
+body {
+    padding: 150px 50px;
+}
+
+.containerblock {
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 680px;
-   
-   
 }
-.items{
+
+.items {
     background-color: rebeccapurple;
     display: flex;
     justify-content: center;
     align-items: center;
-    height:100px ;
+    height: 100px;
     width: 90%;
     margin: 10px;
-   
+
 }
-.foot{
+
+.foot {
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
     background-color: red;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 45px;
-    
-
-    bottom:0px;
 }

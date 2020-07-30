@@ -1,24 +1,24 @@
 <?php
 
-function affiche_equipement()
+function show_equipment()
 {
 	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
-	$requete_affiche_equipements = $cnx->query(" SELECT *  FROM category_equipement");
+	$req_show_equipments = $cnx->query(" SELECT *  FROM category_equipement");
 
-	return $requete_affiche_equipements;
+	return $req_show_equipments;
 }
 
 
-function afficher_details_equipement()
+function show_details_equipment()
 {
 	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
-	$requete_details_equipements = $cnx->prepare(" SELECT * FROM category_equipement WHERE id_category = ? ");
-	$requete_details_equipements->execute(array($_GET['id_category']));
+	$req_details_equipment = $cnx->prepare(" SELECT * FROM category_equipement WHERE id_category = ? ");
+	$req_details_equipment->execute(array($_GET['id_category']));
 
-	return $requete_details_equipements;
+	return $req_details_equipment;
 }
 
-function count_equipement()
+function show_count_equipment()
 {
 	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
 	$req_count = $cnx->prepare('SELECT COUNT(*) AS count_items FROM equipement WHERE id_category = ?');

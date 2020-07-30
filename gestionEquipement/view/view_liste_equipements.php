@@ -3,11 +3,11 @@ ob_start();?>
 
 <?php
 
-    while($result_affiche_equipement=$requete_affiche_equipements->fetch()){
+    while($result_show_equipment=$req_show_equipments->fetch()){
 
        echo
-           "<a class='listeEquipement' href='routeur.php?action=gestionEquipement&id_category=".$result_affiche_equipement['id_category']."'>"
-           .$result_affiche_equipement['name_category'].
+           "<a class='listeEquipement' href='routeur.php?action=gestionEquipement&id_category=".$result_show_equipment['id_category']."'>"
+           .$result_show_equipment['name_category'].
            "<br/></a>";
     }
 
