@@ -18,11 +18,38 @@ function show_details_equipment()
 	return $req_details_equipment;
 }
 
-function show_count_equipment()
+function count_total_equipment()
 {
 	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
-	$req_count = $cnx->prepare('SELECT COUNT(*) AS count_items FROM equipement WHERE id_category = ?');
-	$req_count->execute(array($_GET['id_category']));
+	$req_count_total = $cnx->prepare('SELECT COUNT(*) AS count_items FROM equipement WHERE id_category = ?');
+	$req_count_total->execute(array($_GET['id_category']));
 
-	return $req_count;
+	return $req_count_total;
+}
+
+function count_available_equipment()
+{
+	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
+	$req_count_available = $cnx->prepare('SELECT COUNT(*) AS count_items FROM equipement WHERE id_category = ? AND id_status=1');
+	$req_count_available->execute(array($_GET['id_category']));
+
+	return $req_count_available;
+}
+
+function count_outoforder_equipment()
+{
+	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
+	$req_count_outoforder = $cnx->prepare('SELECT COUNT(*) AS count_items FROM equipement WHERE id_category = ? AND id_status=2');
+	$req_count_outoforder->execute(array($_GET['id_category']));
+
+	return $req_count_outoforder;
+}
+
+function count_inservice_equipment()
+{
+	require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "cnx.php");
+	$req_count_inservice = $cnx->prepare('SELECT COUNT(*) AS count_items FROM equipement WHERE id_category = ? AND id_status=3');
+	$req_count_inservice->execute(array($_GET['id_category']));
+
+	return $req_count_inservice;
 }
