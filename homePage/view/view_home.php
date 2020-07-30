@@ -2,10 +2,10 @@
 <?php ob_start(); ?>
 
     <div class="containerblock">
-        <div class="items"><a href="../DynamicJet2/routeur.php?action=gestionReservation">Reservation</a></div>
-        <div class="items"><a href="../DynamicJet2/routeur.php?action=gestionClient">Gestion Clients</a></div>
-        <div class="items"><a href="../DynamicJet2/routeur.php?action=gestionEquipement">Equipements</a></div>
-        <div class="items"><a href="../DynamicJet2/routeur.php?action=gestionEffectif">Effectifs</a></div>
+        <div class="items"><a href="../DynamicJet/routeur.php?action=gestionReservation">Reservation</a></div>
+        <div class="items"><a href="../DynamicJet/routeur.php?action=gestionClient">Gestion Clients</a></div>
+        <div class="items"><a href="../DynamicJet/routeur.php?action=gestionEquipement">Equipements</a></div>
+        <div class="items"><a href="../DynamicJet/routeur.php?action=gestionEffectif">Effectifs</a></div>
     </div>
   
 <?php $contenu=ob_get_clean(); ?>

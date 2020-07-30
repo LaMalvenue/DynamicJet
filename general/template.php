@@ -16,7 +16,7 @@
     <nav>
         <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
             <div class="container">
-                <a href="../" class="navbar-brand">Dynamic Jet</a>
+                <a href="routeur.php" class="navbar-brand">Dynamic Jet</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,19 +24,19 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../help/">Accueil</a>
+                            <a class="nav-link" href="routeur.php">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../help/">Reservations</a>
+                            <a class="nav-link" href="routeur.php?action=gestionReservation">Reservations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://blog.bootswatch.com">Equipements</a>
+                            <a class="nav-link" href="routeur.php?action=gestionEquipement">Equipements</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://blog.bootswatch.com">Effectifs</a>
+                            <a class="nav-link" href="routeur.php?action=gestionEffectif">Effectifs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../help/">Clients</a>
+                            <a class="nav-link" href="routeur.php?action=gestionClient">Gestion clients</a>
                         </li>
                     </ul>
                 </div>
