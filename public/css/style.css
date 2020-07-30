@@ -42,6 +42,7 @@ ul, ol, li {
 }
 button {
     background-color: #ffeddd;
+    border-color: cadetblue;
     color : cadetblue;
     font-family: 'Caveat', cursive;
     font-weight: bold;

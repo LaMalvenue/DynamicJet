@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" href="../public/images/favicon.png" type="image/png"/>
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.css" media="screen">
     <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
     <link rel="stylesheet" type="text/css" href="../DynamicJet/public/css/style.css">
+
     <?php if(isset($css)) { ?>
         <link rel="stylesheet" type="text/css" href="../DynamicJet/public/css/<?= $css ?>">
     <?php } ?>

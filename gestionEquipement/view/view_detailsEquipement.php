@@ -14,8 +14,7 @@
             <h1><?= $equipment['name_category'] ?></h1>
             <div class="container-equipment-description">
                 <h4><?= $equipment['description_category'] ?></h4>
-                <p class="lead">Puissance de <?= $equipment['power'] ?>km/h 💦 Prix HT à partir de <?= $equipment['price'] ?>
-                    €/h</p>
+                <p class="lead">Puissance de <?= $equipment['power'] ?>km/h 💦 Prix HT à partir de <?= $equipment['price'] ?>€/h</p>
 
 
                 <table class="table ">
@@ -39,7 +38,7 @@
             </div>
             <div class="container container-img  ">
                 <div class="col-md-7">
-                    <img class="img-fluid img-thumbnail rounded" src="<?= $equipment['image'] ?>" alt="Jet ski">
+                    <img class="img-fluid img-thumbnail rounded" src="public/images/<?= $equipment['image'] ?>" alt="Jet ski">
                 </div>
             </div>
 		<?php } ?>
