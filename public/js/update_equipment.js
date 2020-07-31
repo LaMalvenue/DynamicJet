@@ -5,6 +5,9 @@ const descriptionEquipement = document.getElementById("descriptionEquipment").in
 const powerEquipment = document.getElementById("powerEquipment").innerText;
 const priceEquipment = document.getElementById("priceEquipment").innerText;
 
+const addEquipmentArea = document.getElementById("addEquipmentArea");
+const addEquipmentButton = document.getElementById("addEquipmentButton");
+
 updateButton.addEventListener("click", function (e) {
     e.preventDefault();
     detailsEquipement.style = "display: flex; justify-content: center;"
@@ -17,3 +20,13 @@ updateButton.addEventListener("click", function (e) {
         "<button class='btn-success btn' type='submit' name='update' id='updateEquipment'>Valider</button></div>" +
         "</form>"
 })
+
+addEquipmentButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    addEquipmentButton.style = "display:none;";
+    addEquipmentArea.innerHTML = "<form class=\"formAdd\" action=\"\" method=\"post\"><div class='form-group'><label>Quantité disponible :</label><input class='form-control' type='number' name='amount_available' value='0'></div>" +
+        "                         <div class='form-group'><label>Quantité hors service :</label><input class=\"form-control\" type=\"number\" name=\"amount_out\"  value='0'/></div>" +
+        "                         <div class='form-group'><label>Quantité en service :</label><input class=\"form-control\" type=\"number\" name=\"amount_inservice\"  value='0'/></div>"+
+        "<div class='row'><button id=\"addEquipmentButton\" type='submit' class=\"btn btn-success \" name='add'>Valider</button>" +
+        "<a href=''><button id=\"addEquipmentButton\" type='button' class=\"btn btn-primary \">Retour</button></a></div></form>";
+});

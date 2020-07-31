@@ -20,7 +20,7 @@
 						<?php
 						if ($equipment['power'] != 0) {
 							echo "<p class=\"lead\">Puissance de <span id=\"powerEquipment\">" . $equipment['power'] . "</span>cv 💦 </p>";
-                        }
+						}
 						?>
                         <p class="lead">Prix HT à partir de <span id="priceEquipment"><?= $equipment['price'] ?></span>€/h
                         </p>
@@ -44,6 +44,10 @@
                         </tr>
                         </tbody>
                     </table>
+
+                        <div id="addEquipmentArea"></div>
+                        <button id="addEquipmentButton" type="button" class="btn btn-primary " name="add">Ajouter</button>
+
                 </div>
                 <div class="col-md-6 container-img">
                     <img class="img-fluid img-thumbnail rounded" src="public/images/<?= $equipment['image'] ?>"

@@ -52,6 +52,7 @@ button {
     text-align: center;
 }
 .btn-primary {
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: #1d7679 -webkit-gradient(linear, left top, left bottom, from(cadetblue), to(#369598)) repeat-x;
     background: #1b7679 linear-gradient(180deg, cadetblue, #369598) repeat-x;
     border-color: cadetblue;
@@ -142,7 +143,7 @@ button:hover {
 }
 
 /* ******************************** UPDATE EQUIPMENT ******************************** */
-.formUpdate, .formInsert {
+.formUpdate, .formInsert , .formAdd{
     background: white;
     width: 100%;
     display: flex;
@@ -152,10 +153,10 @@ button:hover {
     margin-bottom: 10px;
     padding: 20px;
 }
-.formUpdate input, .formInsert input {
+.formUpdate input, .formInsert input, .formAdd input{
     background: white;
     width: 400px;
 }
-.formUpdate button, .formInsert button {
+.formUpdate button, .formInsert button, .formAdd button {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
