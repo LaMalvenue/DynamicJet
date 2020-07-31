@@ -5,7 +5,6 @@ require_once("gestionClient/controller/controller_liste_clients.php");
 require_once("gestionEffectif/controller/controller_liste_effectifs.php");
 
 if (isset($_GET['action'])) {
-
 	if ($_GET['action'] === 'gestionEquipement') {
 		if (isset($_GET['id_category'])) {
 			if (isset($_POST['update'])) {
@@ -16,7 +15,11 @@ if (isset($_GET['action'])) {
 				details_equipment();
 			}
 		} elseif (!isset($_GET['id_category'])) {
-			equipment();
+			if (isset($_POST['insert'])) {
+				addEquipments($_POST['name_category'], $_POST['description_category'], $_POST['power'], $_POST['price'], $_POST['image'], $_POST['amount'], $_POST['availability']);
+			} else {
+				equipment();
+			}
 		}
 	} elseif ($_GET['action'] === 'gestionClient') {
 		client();
@@ -24,7 +27,6 @@ if (isset($_GET['action'])) {
 	} elseif ($_GET['action'] === 'gestionEffectif') {
 		effectif();
 	}
-
 } else {
 	require('homePage/controller/controller_homePage.php');
 }

@@ -12,9 +12,18 @@ ob_start(); ?>
                     </a>
                 </div>
 			<?php } ?>
+            <div class="col-md-5">
+                <a href=''>
+                    <button id="insertCategoryButton" class="button-equipment">
+				       Ajouter une catégorie ?
+                    </button>
+                </a>
+                <div id="insertCategoryArea"></div>
+            </div>
         </div>
     </div>
 
+    <script src="public/js/app.js"></script>
 
 <?php $contenu = ob_get_clean(); ?>
 <?php require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "template.php"); ?>

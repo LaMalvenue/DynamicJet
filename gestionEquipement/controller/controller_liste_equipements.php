@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 include(dirname(__DIR__).DIRECTORY_SEPARATOR."model".DIRECTORY_SEPARATOR."model_equipements.php");
 
 function equipment(){
@@ -24,6 +23,16 @@ function update_equipment($name_category,$description_category,$power,$price,$id
 }
 function delete_equipment($id_category){
 	$req_delete = show_delete_equipment($id_category);
+
+	equipment();
+}
+
+function addEquipments($name_category,$description_category,$power,$price,$image,$amount,$availability){
+	$req_add_category = add_category($name_category,$description_category,$power,$price,$image);
+	for($i=0;$i<$_POST['amount'];$i++)
+	{
+		$req_add_equipment = add_equipment($availability,$name_category);
+	}
 
 	equipment();
 }

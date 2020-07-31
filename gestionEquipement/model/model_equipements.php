@@ -75,3 +75,46 @@ function show_delete_equipment()
 
 	return $req_delete;
 }
+
+function add_category($name_category,$description_category,$power,$price,$image){
+
+	require(dirname(__DIR__,2).DIRECTORY_SEPARATOR."general".DIRECTORY_SEPARATOR."cnx.php");
+
+	// $req_add_equipement = $cnx->prepare(' INSERT INTO equipement (nom_equipement,categorie,description,image,quantite,puissance,etat_service,prix_loc_HT) VALUES (?,?,?,?,?,?,?,?) ');
+	// $req_add_equipement->execute(array($nom_equipement, $categorie, $description, $image, $quantite, $puissance, $etat_service, $prix_loc_HT));
+
+	$req_add_category = $cnx->prepare('INSERT INTO category_equipement (name_category,description_category,power,price,image) 
+    VALUES (:name_category,:description_category,:power,:price,:image)');
+	$req_add_category->execute(array(
+		'name_category'=>$_POST['name_category'],
+		'description_category' => $_POST['description_category'],
+		'power'=> $_POST['power'],
+		'price'=> $_POST['price'],
+		'image'=> $_POST['image'],
+	));
+	return $req_add_category;
+
+}
+
+
+function add_equipment($availability,$name_category){
+
+	require(dirname(__DIR__,2).DIRECTORY_SEPARATOR."general".DIRECTORY_SEPARATOR."cnx.php");
+
+	$req_id_category = $cnx->prepare('SELECT id_category FROM category_equipement WHERE name_category = ?') ;
+	$req_id_category->execute(array($_POST['name_category']));
+
+	$row = $req_id_category->fetch();
+	if($row){
+		$result_id_category=$row['id_category'];
+	}
+
+	$req_add_equipment = $cnx->prepare('INSERT INTO equipement (id_category,state) 
+        VALUES (:id_category,:availability)');
+	$req_add_equipment->execute(array(
+		'id_category'=>$result_id_category,
+		'availability' => $_POST['availability']));
+
+	return $req_add_equipment;
+
+}

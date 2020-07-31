@@ -49,16 +49,14 @@
                 <a href="">
                     <button type="button" class="btn btn-primary" name="update" id="update">Modifier</button>
                 </a>
-                <a href="">
-                    <button type="button" class="btn btn-danger " name="delete">Supprimer</button>
-                </a>
+                <form action="" method="post">
+                    <button type="submit" class="btn btn-danger " name="delete">Supprimer</button>
+                </form>
             </div>
         </div>
     </div>
 
-    <script src="public/js/app.js">
-
-    </script>
+    <script src="public/js/app.js"></script>
 
 <?php $contenu = ob_get_clean(); ?>
 
