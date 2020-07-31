@@ -4,20 +4,17 @@ const insertCategoryArea = document.getElementById("insertCategoryArea");
 insertCategoryButton.addEventListener("click", function (e) {
     e.preventDefault();
     insertCategoryArea.innerHTML  = "<form action='' class='formInsert' method='post'>" +
-        "<div class='form-group'><label>Nom : <input type='text' class=\"form-control\" name='name_category' placeholder=\"Nom de l'équipement\" required></label></div>" +
-        "<div class='form-group'><label>Description : <textarea class=\"form-control\" name='description_category'  required></textarea></label></div>" +
-        "<div class='form-group'><label>Puissance : <input type='number' class=\"form-control\" name='power'  required></label></div>" +
-        "<div class='form-group'><label>Prix HT : <input type='number' class=\"form-control\" name='price'  required></label></div>" +
-        "<div class='form-group'><label>Image : <input type='text' class=\"form-control\" name='image'  required></label></div>" +
-        "<p> <label> Quantité </label> <input type=\"number\" name=\"amount\" /> </p>\n" +
-        "            <p> \n" +
-        "               <select name='availability'>\n" +
-        "                  <!-- <option value=\"disponible\"> Disponible </option> -->   \n" +
-        "                  <option value=\"1\"> En service </option>\n" +
-        "                  <option value=\"2\"> Indisponible </option>\n" +
-        "                  <option value=\"3\"> Hors service </option>                                 \n" +
-        "               </select>\n" +
-        "            </p>"+
+        "<div class='form-group'><label>Nom : <input type='text' class=\"form-control\" name='name_category' placeholder='Kayak' required></label></div>" +
+        "<div class='form-group'><label>Description : <input type='text' class=\"form-control\" name='description_category' placeholder='Un kayak pour faire le mariole' required></label></div>" +
+        "<div class='form-group'><label>Puissance (0 si non motorisé) : <input type='number' class=\"form-control\" name='power' value='0' required></label></div>" +
+        "<div class='form-group'><label>Prix HT (en €) : <input type='number' class=\"form-control\" name='price' placeholder='200' required></label></div>" +
+        "<div class='form-group'><label>Image : <input type='text' class=\"form-control\" name='image' placeholder='Kayak.jpg' required></label></div>" +
+        "<div class='form-group'><label> Quantité </label><input class=\"form-control\" type=\"number\" name=\"amount\" /> "+
+        "               <select class=\"form-control\" name='availability'>" +
+        "                  <option value=\"1\"> En service </option>" +
+        "                  <option value=\"2\"> Indisponible </option>" +
+        "                  <option value=\"3\"> Hors service </option>" +
+        "               </select></div>"+
         "<button class='btn-success btn' type='submit' name='insert' id='insertEquipment'>Ajouter</button></div>" +
         "</form>"
 })
