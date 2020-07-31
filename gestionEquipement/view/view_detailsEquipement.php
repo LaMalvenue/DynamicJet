@@ -1,4 +1,3 @@
-<?php $titre = "Details de l'équipement"; ?>
 <?php $css = "style_equipment.css"; ?>
 
 <?php ob_start(); ?>
@@ -8,6 +7,8 @@
 <?php $count_available = $req_count_available->fetch(); ?>
 <?php $count_outoforder = $req_count_outoforder->fetch(); ?>
 <?php $count_inservice = $req_count_inservice->fetch(); ?>
+
+<?php $titre = "Details : " . $equipment['name_category']; ?>
 
     <div class="container container-equipment">
         <div class="container-equipment-description">

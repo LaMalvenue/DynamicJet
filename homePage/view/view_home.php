@@ -1,4 +1,4 @@
-<?php $titre="homePage" ; ?>
+<?php $titre="Accueil" ; ?>
 <?php $background="https://www.villa-lv.com/wp-content/uploads/2017/11/tumblr-beach-waves-backgrounds-7096-7377-hd-wallpapers.jpg" ; ?>
 
 <?php ob_start(); ?>
