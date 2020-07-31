@@ -109,7 +109,7 @@ function add_equipment($availability,$name_category){
 		$result_id_category=$row['id_category'];
 	}
 
-	$req_add_equipment = $cnx->prepare('INSERT INTO equipement (id_category,state) 
+	$req_add_equipment = $cnx->prepare('INSERT INTO equipement (id_category,id_status) 
         VALUES (:id_category,:availability)');
 	$req_add_equipment->execute(array(
 		'id_category'=>$result_id_category,

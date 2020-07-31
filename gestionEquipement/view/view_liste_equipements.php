@@ -23,7 +23,7 @@ ob_start(); ?>
         </div>
     </div>
 
-    <script src="public/js/app.js"></script>
+    <script src="public/js/insert_equipment.js"></script>
 
 <?php $contenu = ob_get_clean(); ?>
 <?php require(dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . "general" . DIRECTORY_SEPARATOR . "template.php"); ?>

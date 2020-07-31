@@ -17,8 +17,13 @@
                     <div id="details">
                         <h1 id="nameEquipment"><?= $equipment['name_category'] ?></h1>
                         <h4 id="descriptionEquipment"><?= $equipment['description_category'] ?></h4>
-                        <p class="lead">Vitesse de <span id="powerEquipment"><?= $equipment['power'] ?></span> km/h 💦 </p>
-                        <p class="lead">Prix HT à partir de <span id="priceEquipment"><?= $equipment['price'] ?></span>€/h</p>
+						<?php
+						if ($equipment['power'] != 0) {
+							echo "<p class=\"lead\">Puissance de <span id=\"powerEquipment\">" . $equipment['power'] . "</span>cv 💦 </p>";
+                        }
+						?>
+                        <p class="lead">Prix HT à partir de <span id="priceEquipment"><?= $equipment['price'] ?></span>€/h
+                        </p>
                     </div>
 
                     <table class="table ">
@@ -56,7 +61,7 @@
         </div>
     </div>
 
-    <script src="public/js/app.js"></script>
+    <script src="public/js/update_equipment.js"></script>
 
 <?php $contenu = ob_get_clean(); ?>
 
