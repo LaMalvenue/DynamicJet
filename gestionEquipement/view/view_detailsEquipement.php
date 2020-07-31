@@ -14,7 +14,6 @@
         <div class="container-equipment-description">
             <div class="row">
                 <div class="col-md-6">
-
                     <div id="details">
                         <h1 id="nameEquipment"><?= $equipment['name_category'] ?></h1>
                         <h4 id="descriptionEquipment"><?= $equipment['description_category'] ?></h4>
